@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - SnackPi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carro.css">
+</head>
+<body class="carro-page">
+    <header class="carrito-header">
+        <div class="container-logo">
+            <i class="fa-solid fa-ice-cream"></i>
+            <h1 class="logo">SnackPi</h1>
+        </div>
+        <h1>Carrito de Compras</h1>
+    </header>
+
+    <main class="carrito-main">
+        <section class="carrito-section">
+            <div class="carrito-tabla-container">
+                <table class="carrito-tabla">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Productos del carrito -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="carrito-total">
+                <h2>Total: $<span id="cart-total">0.00</span></h2>
+                <button id="btn-print-receipt" class="print-btn">Imprimir recibo</button>
+                <button id="clear-cart" class="btn-vaciar">Vaciar carrito</button>
+            </div>
+        </section>
+        <a href="index.html" class="btn-volver">Volver a la tienda</a>
+    </main>
+
+    <div id="confirmModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <h2>¿Eliminar producto?</h2>
+            <p>Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button id="confirmYes" class="btn-danger">Sí, eliminar</button>
+                <button id="confirmNo" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
