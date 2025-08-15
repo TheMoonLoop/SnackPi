@@ -1,0 +1,343 @@
+:root {
+    --primary-color: #b92910;
+    --secondary-color: #ff7741;
+    --accent-color: #ff6b6b;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 5px rgba(16, 13, 13, 0.1);
+}
+
+/* Ajuste general */
+body.carro-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.carrito-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Contenedor principal del carrito */
+.carrito-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+    margin-top: 20px;
+}
+
+/* Tabla del carrito */
+.carrito-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    table-layout: auto;
+}
+
+.carrito-tabla th,
+.carrito-tabla td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    word-break: break-word;
+    font-size: 1.5rem;
+}
+
+.carrito-tabla th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.carrito-tabla tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+/* Ajustes generales para la tabla */
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.cart-container th,
+.cart-container td {
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Total y acciones */
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.carrito-total h2 {
+    margin: 0;
+}
+
+/* Botones */
+button,
+.add-cart,
+.checkout-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: var(--border-radius, 8px);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover,
+.add-cart:hover,
+.checkout-btn:hover {
+    background-color: var(--accent-color);
+}
+
+button:active,
+.add-cart:active,
+.checkout-btn:active {
+    background-color: #8a1f0c;
+    transform: scale(0.97);
+}
+
+.btn-qty {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-qty:hover {
+    background-color: var(--secondary-color);
+}
+
+.item-qty {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-vaciar {
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+}
+
+.btn-vaciar:hover {
+    background-color: #ff3b3b;
+}
+
+.print-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius, 8px);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-size: 1.5rem;
+}
+
+.print-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.print-btn:active {
+    background-color: #8a1f0c;
+    transform: scale(0.97);
+}
+
+.print-btn:disabled {
+    background-color: var(--accent-color);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Estado vacío */
+.carrito-tabla td[colspan="5"] {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.btn-volver {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease;
+    display: inherit;
+    margin-top: 1rem;
+}
+
+.btn-volver:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Modal de confirmacion */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+    .carrito-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .carrito-tabla th,
+    .carrito-tabla td {
+    	font-size: 2.5rem;
+	}
+
+	.btn-qty {
+		font-size: 3rem;
+	}
+
+	.carrito-total {
+		font-size: 2rem;
+	}
+
+	.print-btn, 
+	.btn-vaciar {
+		font-size: 2.5rem;
+	}
+
+    .btn-volver {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    body.carro-page {
+        padding: 10px;
+    }
+
+    .carrito-section {
+        padding: 10px;
+    }
+
+    .carrito-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .carrito-header .container-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .carrito-header h1 {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .btn-qty {
+    	font-size: 1.5rem;
+    }
+
+    .carrito-total {
+    	font-size: 1rem;
+    }
+
+    .print-btn, 
+	.btn-vaciar {
+		font-size: 1.5rem;
+	}
+
+    .btn-volver {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .carrito-tabla th,
+    .carrito-tabla td {
+    	font-size: 1.5rem;
+        padding: 5px;
+    }
+}
