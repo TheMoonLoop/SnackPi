@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Turnos | Snackpi</title>
+	<link rel="stylesheet" href="css/styles.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body> 
+	<header>
+		<div class="container-hero">
+			<div class="container hero">
+				<div class="customer-support">
+					<i class="fa-solid fa-headset"></i>
+					<div class="content-customer-support">
+						<span class="text">Soporte</span>
+						<span class="number">
+							<a href="mailto:Equipo5pi@uttn.mx">Equipo5pi@uttn.mx</a>
+						</span>
+					</div>
+				</div>
+
+				<div class="container-logo">
+					<i class="fa-solid fa-ice-cream"></i>
+					<h1 class="logo"><a href="/">SnackPi</a></h1>
+				</div>
+
+				<div class="user-section">
+					<div class="container-user">
+						<a href="login.html" title="Iniciar sesión o registrarse" class="user-icon" aria-label="Perfil de usuario">
+							<i class="fa-solid fa-user"></i>
+						</a>
+					</div>
+
+					<div class="shopping-cart-icon">
+						<a href="carro.html" aria-label="Carrito">
+							<i class="fa-solid fa-basket-shopping"></i>
+							<span id="cart-count" class="cart-count">0</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container" role="navigation" aria-label="Menú principal">
+				<input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+				<label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">
+					<i class="fas fa-bars"></i>
+				</label>
+
+				<ul class="menu">
+					<li><a href="Index.html">Inicio</a></li>
+					<li><a href="search.html?category=bebidas">Bebidas</a></li>
+					<li><a href="search.html?category=helados">Helados</a></li>
+					<li><a href="search.html?category=postre">Postres</a></li>
+					<li><a href="search.html?category=salado">Snacks Salados</a></li>
+					<li><a href="search.html?category=all">Todos los productos</a></li>
+				</ul>
+
+				<form class="search-form" role="search" action="search.html" method="get">
+				    <input type="search" name="q" placeholder="Buscar..." aria-label="Buscar productos"/>
+				    <button class="btn-search" aria-label="Buscar">
+				        <i class="fa-solid fa-magnifying-glass"></i>
+				    </button>
+				</form>
+			</nav>
+		</div>
+	</header>
+
+	<section class="banner" id="banner" aria-label="Promoción principal">
+		<div class="content-banner">
+			<p>Grandes Productos</p>
+			<h2>A buen precio<br/>Compre Ahora</h2>
+			<a href="#Productos" class="btn-banner" role="button">Comprar ahora</a>
+		</div>
+	</section>
+
+	<section id="product-detail" style="display:none"></section>
+
+	<main class="main-content">
+		<script src="js/products.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/cart.js"></script> 
+		
+		<section class="container container-features" aria-label="Características del servicio">
+			<article class="card-feature">
+				<i class="fa-solid fa-utensils" aria-hidden="true"></i>
+				<div class="feature-content">
+					<h3>Pide tus productos</h3>
+					<p>De las tiendas favoritas seleccionadas</p>
+				</div>
+			</article>
+
+			<article class="card-feature">
+				<i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+				<div class="feature-content">
+					<h3>Turnos</h3>
+					<p>Generamos tu turno cuando termines tu pedido</p>
+				</div>
+			</article>
+
+			<article class="card-feature">
+				<i class="fa-solid fa-wallet" aria-hidden="true"></i>
+				<div class="feature-content">
+					<h3>Efectivo</h3>
+					<p>Todos los pagos son en efectivo</p>
+				</div>
+			</article>
+
+			<article class="card-feature">
+				<i class="fa-solid fa-check" aria-hidden="true"></i>
+				<div class="feature-content">
+					<h3>Rápido y eficaz</h3>
+					<p>Rápido y sin errores</p>
+				</div>
+			</article>
+		</section>
+
+		<section class="container top-categories" aria-label="Categorías principales">
+			<h1 class="heading-1">Mejores Productos</h1>
+			<div class="container-categories">
+				<span href="search.html?category=salado" class="card-category category-salado" aria-label="Snack Salado">
+					<p>Snack Salado</p>
+					<span>Ver más</span>
+				</span>
+
+				<span href="search.html?category=helados" class="card-category category-helado" aria-label="Helados">
+					<p>Helados</p>
+					<span>Ver más</span>
+				</span>
+
+				<span href="search.html?category=bebidas" class="card-category category-bebida" aria-label="Bebidas">
+					<p>Bebidas</p>
+					<span>Ver más</span>
+				</span>
+			</div>
+		</section>
+
+		<section class="container top-products" aria-label="Listado de productos">
+			<h1 class="heading-1">Productos</h1>
+			<div class="container-options">
+				<span class="active" aria-current="true">Destacados</span>
+				<span>Más recientes</span>
+				<span>Mejores Vendidos</span>
+			</div>
+
+			<div class="container-products" id="destacados"></div>
+		</section>
+
+		<section class="gallery" aria-label="Galería de productos o promociones">
+			<figure class="gallery-item gallery-img-1"><img src="img/gallery1.jpg"></figure>
+			<figure class="gallery-item gallery-img-2"><img src="img/gallery2.jpg"></figure>
+			<figure class="gallery-item gallery-img-3"><img src="img/gallery3.jpg"></figure>
+			<figure class="gallery-item gallery-img-4"><img src="img/gallery4.jpg"></figure>
+			<figure class="gallery-item gallery-img-5"><img src="img/gallery5.jpg"></figure>
+		</section>
+
+		<section class="container specials" aria-labelledby="heading-bebidas">
+			<div class="item" id="Bebidas"></div>
+			<h2 id="heading-bebidas" class="heading-1">Bebidas</h2>
+
+			<div class="container-products" id="bebidas"></div>
+			<script>
+			    renderProducts("o2c,pe,cob,ar", "bebidas");
+			</script>		
+		</section>
+
+		<section class="container specials" aria-labelledby="heading-mas-bebidas">
+			<h2 id="heading-mas-bebidas" class="heading-1">Más Bebidas</h2>
+
+			<div class="container-products" id="mas-bebidas"></div>
+			<script>
+			    renderProducts("7u,be,sh,man", "mas-bebidas");
+			</script>		
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container container-footer">
+			<div class="menu-footer">
+				<section class="footer-section contact-info" aria-labelledby="footer-contact">
+					<h2 id="footer-contact" class="title-footer">Información de contacto</h2>
+					<ul>
+						<li><strong>Teléfono:</strong> <a href="tel:01800909011">01 800 909 011</a></li>
+						<li><strong>Email:</strong> <a href="mailto:jkpi@outlook.com">jkpi@outlook.com</a></li>
+					</ul>
+					<div class="social-icons" aria-label="Redes sociales">
+						<span class="facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></span>
+						<span class="twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></span>
+						<span class="youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></span>
+						<span class="instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></span>
+					</div>
+				</section>
+
+				<section class="footer-section information" aria-labelledby="footer-info">
+					<h2 id="footer-info" class="title-footer">Información</h2>
+					<ul>
+						<li><a href="#">Acerca de nosotros</a></li>
+						<li><a href="#">Políticas de privacidad</a></li>
+						<li><a href="#">Términos y condiciones</a></li>
+						<li><a href="#">Contáctanos</a></li>
+					</ul>
+				</section>
+
+				<section class="footer-section my-account" aria-labelledby="footer-account">
+					<h2 id="footer-account" class="title-footer">Mi cuenta</h2>
+					<ul>
+						<li><a href="#">Mi cuenta</a></li>
+						<li><a href="#">Historial de órdenes</a></li>
+						<li><a href="#">Lista de deseos</a></li>
+						<li><a href="#">Reembolsos</a></li>
+					</ul>
+				</section>
+			</div>
+
+			<div class="copyright">
+				<p>Sistema de Turnos y Menú Digital 2025 &copy; <strong>SnackPi</strong></p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

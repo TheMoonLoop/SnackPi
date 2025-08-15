@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Busqueda | Snackpi</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/search.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Soporte</span>
+                        <span class="number">
+                            <a href="mailto:Equipo5pi@uttn.mx">Equipo5pi@uttn.mx</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="container-logo">
+                    <i class="fa-solid fa-ice-cream"></i>
+                    <h1 class="logo"><a href="/">SnackPi</a></h1>
+                </div>
+
+                <div class="user-section">
+                    <div class="container-user">
+                        <a href="login.html" title="Iniciar sesión o registrarse" class="user-icon" aria-label="Perfil de usuario">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
+
+                    <div class="shopping-cart-icon">
+                        <a href="carro.html" aria-label="Carrito">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            <span id="cart-count" class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container" role="navigation" aria-label="Menú principal">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+                <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <ul class="menu">
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="search.html?category=bebidas">Bebidas</a></li>
+                    <li><a href="search.html?category=helados">Helados</a></li>
+                    <li><a href="search.html?category=postre">Postres</a></li>
+                    <li><a href="search.html?category=salado">Snacks Salados</a></li>
+                    <li><a href="search.html?category=all">Todos los productos</a></li>
+                </ul>
+
+                <form class="search-form" role="search">
+                    <input type="search" name="q" placeholder="Buscar..." aria-label="Buscar productos"/>
+                    <button class="btn-search" aria-label="Buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <section id="product-detail" style="display:none"></section>
+
+    <main>
+        <div class="search-header">
+            <h2 id="search-title"></h2>
+            <select id="sort-select" aria-label="Ordenar productos">
+                <option value="name">Alfabético (A-Z)</option>
+                <option value="price-asc">Precio (menor a mayor)</option>
+                <option value="price-desc">Precio (mayor a menor)</option>
+            </select>
+        </div>
+        <div class="container-products" id="search-results"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <section class="footer-section contact-info" aria-labelledby="footer-contact">
+                    <h2 id="footer-contact" class="title-footer">Información de contacto</h2>
+                    <ul>
+                        <li><strong>Teléfono:</strong> <a href="tel:01800909011">01 800 909 011</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:jkpi@outlook.com">jkpi@outlook.com</a></li>
+                    </ul>
+                    <div class="social-icons" aria-label="Redes sociales">
+                        <span class="facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></span>
+                        <span class="twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></span>
+                        <span class="youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></span>
+                        <span class="instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></span>
+                    </div>
+                </section>
+
+                <section class="footer-section information" aria-labelledby="footer-info">
+                    <h2 id="footer-info" class="title-footer">Información</h2>
+                    <ul>
+                        <li><a href="#">Acerca de nosotros</a></li>
+                        <li><a href="#">Políticas de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-section my-account" aria-labelledby="footer-account">
+                    <h2 id="footer-account" class="title-footer">Mi cuenta</h2>
+                    <ul>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Historial de órdenes</a></li>
+                        <li><a href="#">Lista de deseos</a></li>
+                        <li><a href="#">Reembolsos</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="copyright">
+                <p>Sistema de Turnos y Menú Digital 2025 &copy; <strong>SnackPi</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script> 
+</body>
+</html>
